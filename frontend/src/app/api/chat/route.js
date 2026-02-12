@@ -2,12 +2,11 @@ import { NextResponse } from 'next/server'
 import { getServerSession } from 'next-auth'
 import { authOptions } from '@/lib/auth/authOptions'
 import { db } from '@/lib/db'
-
-const BACKEND_URL = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:5000'
+import { processAIMessage } from '@/lib/ai/aiController'
 
 /**
- * POST /api/chat - Handle chat requests with auth, limits, and database persistence
- * This proxies to the Express backend for AI processing
+ * POST /api/chat - Handle chat requests with auth, limits, and AI processing
+ * Now integrated directly with AI providers (no Express backend needed)
  */
 export async function POST(request) {
     try {
@@ -88,21 +87,8 @@ export async function POST(request) {
         const startTime = Date.now()
 
         try {
-            // Call Express backend for AI processing
-            const backendResponse = await fetch(`${BACKEND_URL}/api/chat`, {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                },
-                body: JSON.stringify({ message }),
-            })
-
-            if (!backendResponse.ok) {
-                const errorData = await backendResponse.json()
-                throw new Error(errorData.error || 'Backend AI service failed')
-            }
-
-            const { response, provider, timestamp } = await backendResponse.json()
+            // Process AI message with integrated provider rotation
+            const aiResult = await processAIMessage(message)
 
             // Calculate response time
             const responseTime = Date.now() - startTime
@@ -113,24 +99,25 @@ export async function POST(request) {
             })
 
             return NextResponse.json({
-                response,
-                provider,
+                response: aiResult.response,
+                provider: aiResult.provider,
                 responseTime,
                 tasksRemaining: Math.max(0, limit - (user.tasksUsedToday + 1)),
                 tasksUsedToday: user.tasksUsedToday + 1,
                 taskLimit: limit,
-                timestamp
+                timestamp: new Date().toISOString(),
+                warning: aiResult.warning,
+                errors: aiResult.errors
             })
 
-        } catch (backendError) {
-            console.error('Express backend error:', backendError)
+        } catch (aiError) {
+            console.error('AI processing error:', aiError)
 
-            // Fallback: If Express backend is down, return error
             return NextResponse.json(
                 {
                     error: 'AI service temporarily unavailable',
-                    message: backendError.message,
-                    suggestion: 'Please make sure the backend server is running on port 5000'
+                    message: aiError.message,
+                    suggestion: 'Please check your API keys in .env.local'
                 },
                 { status: 503 }
             )

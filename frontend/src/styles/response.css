@@ -1,0 +1,106 @@
+.response-area {
+    width: 100%;
+    max-width: 750px;
+    padding: 0 20px;
+    margin-bottom: 40px;
+    animation: fadeInUp 0.5s ease;
+}
+
+.response-card {
+    background: var(--glass);
+    backdrop-filter: blur(40px);
+    border: 1px solid var(--glass-border);
+    border-radius: 20px;
+    padding: 30px;
+    box-shadow: 0 25px 60px rgba(0, 0, 0, 0.4);
+}
+
+.response-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 20px;
+    padding-bottom: 16px;
+    border-bottom: 1px solid var(--glass-border);
+}
+
+.response-agent {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.agent-avatar {
+    width: 36px;
+    height: 36px;
+    background: linear-gradient(135deg, var(--primary), var(--accent));
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 16px;
+    animation: agentPulse 2s infinite;
+}
+
+.agent-name {
+    font-weight: 600;
+    font-size: 14px;
+}
+
+.agent-label {
+    font-size: 12px;
+    color: var(--text-dim);
+}
+
+.response-time {
+    font-size: 12px;
+    color: var(--accent);
+    background: rgba(0, 206, 201, 0.1);
+    padding: 4px 12px;
+    border-radius: 20px;
+}
+
+.response-text {
+    font-size: 15px;
+    line-height: 1.8;
+    color: var(--text-secondary);
+    white-space: pre-wrap;
+}
+
+.typing-cursor {
+    display: inline-block;
+    width: 2px;
+    height: 18px;
+    background: var(--accent);
+    margin-left: 4px;
+    animation: cursorBlink 0.8s infinite;
+    vertical-align: text-bottom;
+}
+
+.response-actions {
+    display: flex;
+    gap: 10px;
+    margin-top: 20px;
+    padding-top: 16px;
+    border-top: 1px solid var(--glass-border);
+}
+
+.action-btn {
+    padding: 8px 16px;
+    background: var(--glass);
+    border: 1px solid var(--glass-border);
+    border-radius: 10px;
+    color: var(--text-secondary);
+    font-size: 13px;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.action-btn:hover {
+    background: rgba(255, 255, 255, 0.1);
+    color: var(--text-primary);
+    border-color: rgba(255, 255, 255, 0.2);
+    transform: translateY(-2px);
+}

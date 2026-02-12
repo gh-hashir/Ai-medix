@@ -1,0 +1,231 @@
+/* ============ RESET & BASE ============ */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --primary: hsl(250, 70%, 63%);
+    --primary-dark: hsl(250, 70%, 55%);
+    --accent: hsl(175, 100%, 40%);
+    --accent-glow: hsl(178, 100%, 50%);
+    --dark-bg: #030308;
+    --card-bg: rgba(255, 255, 255, 0.02);
+    --glass: rgba(255, 255, 255, 0.03);
+    --glass-border: rgba(255, 255, 255, 0.06);
+    --text-primary: #ffffff;
+    --text-secondary: rgba(255, 255, 255, 0.65);
+    --text-dim: rgba(255, 255, 255, 0.35);
+
+    /* Smooth Timing Functions */
+    --ease-out: cubic-bezier(0.33, 1, 0.68, 1);
+    --ease-in-out: cubic-bezier(0.76, 0, 0.24, 1);
+    --ease-elastic: cubic-bezier(0.68, -0.6, 0.32, 1.6);
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background: var(--dark-bg);
+    color: var(--text-primary);
+    overflow-x: hidden;
+    min-height: 100vh;
+    cursor: none;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+button {
+    font-family: 'Inter', sans-serif;
+    cursor: none;
+}
+
+input {
+    font-family: 'Inter', sans-serif;
+    cursor: none;
+}
+
+/* ============ SCROLLBAR ============ */
+::-webkit-scrollbar {
+    width: 6px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--dark-bg);
+}
+
+::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: rgba(255, 255, 255, 0.2);
+}
+
+/* ============ ANIMATIONS ============ */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(16px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.fadeInUp {
+    animation: fadeInUp 1s var(--ease-out) forwards;
+}
+
+@keyframes gradientShift {
+
+    0%,
+    100% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+}
+
+@keyframes float {
+
+    0%,
+    100% {
+        transform: translate(0, 0);
+    }
+
+    33% {
+        transform: translate(15px, -15px);
+    }
+
+    66% {
+        transform: translate(-10px, 10px);
+    }
+}
+
+@keyframes logoPulse {
+
+    0%,
+    100% {
+        filter: drop-shadow(0 0 10px rgba(108, 92, 231, 0.4));
+    }
+
+    50% {
+        filter: drop-shadow(0 0 25px rgba(108, 92, 231, 0.7));
+    }
+}
+
+@keyframes btnShine {
+    0% {
+        left: -100%;
+        top: -100%;
+    }
+
+    20%,
+    100% {
+        left: 100%;
+        top: 100%;
+    }
+}
+
+@keyframes rotateText {
+
+    0%,
+    18% {
+        transform: translateY(0);
+    }
+
+    20%,
+    38% {
+        transform: translateY(-28px);
+    }
+
+    40%,
+    58% {
+        transform: translateY(-56px);
+    }
+
+    60%,
+    78% {
+        transform: translateY(-84px);
+    }
+
+    80%,
+    98% {
+        transform: translateY(-112px);
+    }
+
+    100% {
+        transform: translateY(-140px);
+    }
+}
+
+@keyframes pulseGlow {
+
+    0%,
+    100% {
+        box-shadow: 0 0 12px rgba(255, 75, 43, 0.2);
+        transform: scale(1);
+    }
+
+    50% {
+        box-shadow: 0 0 24px rgba(255, 75, 43, 0.5);
+        transform: scale(1.02);
+    }
+}
+
+/* ============ UTILITY CLASSES ============ */
+.gradient-text {
+    background: linear-gradient(135deg, var(--primary), var(--accent), #e84393);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-size: 200% auto;
+    animation: gradientShift 6s ease-in-out infinite;
+}
+
+.glass {
+    background: var(--glass);
+    backdrop-filter: blur(28px);
+    -webkit-backdrop-filter: blur(28px);
+    border: 1px solid var(--glass-border);
+    transition: all 0.4s var(--ease-out);
+}
+
+.magnetic {
+    transition: transform 0.3s ease;
+}
+
+/* ============ MAIN LAYOUT ============ */
+.main {
+    position: relative;
+    z-index: 1;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 140px;
+}
+
+/* ============ RESPONSIVE ============ */
+@media (max-width: 768px) {
+    body {
+        cursor: auto;
+    }
+
+    * {
+        cursor: auto !important;
+    }
+}

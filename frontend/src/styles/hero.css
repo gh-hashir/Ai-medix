@@ -1,0 +1,83 @@
+.hero {
+    text-align: center;
+    max-width: 800px;
+    padding: 0 20px;
+}
+
+.hero-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 20px;
+    background: var(--glass);
+    border: 1px solid var(--glass-border);
+    border-radius: 50px;
+    font-size: 13px;
+    color: var(--accent);
+    font-weight: 500;
+    margin-bottom: 30px;
+    backdrop-filter: blur(10px);
+    animation: fadeInDown 0.8s ease;
+}
+
+.badge-dot {
+    width: 8px;
+    height: 8px;
+    background: var(--accent);
+    border-radius: 50%;
+    animation: blink 2s infinite;
+}
+
+.hero h1 {
+    font-size: 64px;
+    font-weight: 900;
+    line-height: 1.1;
+    margin-bottom: 24px;
+    letter-spacing: -2px;
+    animation: fadeInUp 0.8s ease;
+}
+
+.hero p {
+    font-size: 18px;
+    color: var(--text-secondary);
+    line-height: 1.7;
+    margin-bottom: 50px;
+    animation: fadeInUp 0.8s ease 0.2s both;
+}
+
+.rotating-text-container {
+    display: inline-block;
+    height: 28px;
+    overflow: hidden;
+    vertical-align: bottom;
+    position: relative;
+}
+
+.rotating-text-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    animation: rotateText 10s infinite ease-in-out;
+}
+
+.rotating-text-list li {
+    height: 28px;
+    line-height: 28px;
+    font-size: 18px;
+    background: linear-gradient(135deg, var(--accent), var(--primary));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-weight: 700;
+    white-space: nowrap;
+}
+
+@media (max-width: 768px) {
+    .hero h1 {
+        font-size: 36px;
+        letter-spacing: -1px;
+    }
+
+    .hero p {
+        font-size: 15px;
+    }
+}

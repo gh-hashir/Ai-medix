@@ -1,0 +1,24 @@
+[
+  {
+    "id": "35b6b7ea-af9e-453f-a95c-99c8b36e8322",
+    "email": "aaa123@gmail.com",
+    "password": "378265386553b6efd6b7bbbf86d730490ed5258812f227d39daf1b19f2b34cc3",
+    "name": "aa",
+    "image": "",
+    "plan": "free",
+    "tasksUsedToday": 1,
+    "tasksResetDate": "2026-02-11T20:13:31.932Z",
+    "createdAt": "2026-02-11T20:13:31.932Z"
+  },
+  {
+    "id": "b40ef771-1bd0-4ecf-a7ab-0330e4af0551",
+    "email": "aa123@gmail.com",
+    "password": "094dacfa4ae26448b7e7fdb6bf45b639ea9c9de2f942aa42310305f0657f9c61",
+    "name": "aa",
+    "image": "",
+    "plan": "free",
+    "tasksUsedToday": 0,
+    "tasksResetDate": "2026-02-12T09:43:08.093Z",
+    "createdAt": "2026-02-12T09:43:08.093Z"
+  }
+]

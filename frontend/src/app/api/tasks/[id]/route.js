@@ -1,0 +1,26 @@
+import { NextResponse } from 'next/server'
+import { getServerSession } from 'next-auth'
+import { authOptions } from '@/lib/auth/authOptions'
+
+export async function DELETE(request, { params }) {
+    try {
+        const session = await getServerSession(authOptions)
+
+        if (!session || !session.user) {
+            return NextResponse.json(
+                { error: 'Unauthorized' },
+                { status: 401 }
+            )
+        }
+
+        // Mock success
+        return NextResponse.json({ success: true })
+
+    } catch (error) {
+        console.error('Error deleting task:', error)
+        return NextResponse.json(
+            { error: 'Internal server error', message: error.message },
+            { status: 500 }
+        )
+    }
+}

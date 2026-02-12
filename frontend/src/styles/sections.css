@@ -1,0 +1,329 @@
+/* ============ SECTIONS ============ */
+.section-title {
+    text-align: center;
+    margin-bottom: 60px;
+    animation: fadeInUp 0.8s ease;
+}
+
+.section-title h2 {
+    font-size: 42px;
+    font-weight: 800;
+    margin-bottom: 12px;
+    letter-spacing: -1px;
+}
+
+.section-title p {
+    font-size: 16px;
+    color: var(--text-secondary);
+}
+
+/* ============ HOW IT WORKS ============ */
+.how-it-works {
+    width: 100%;
+    max-width: 1200px;
+    padding: 100px 40px;
+    margin: 0 auto;
+}
+
+.steps {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 40px;
+}
+
+.step {
+    text-align: center;
+    animation: fadeInUp 0.8s ease;
+}
+
+.step:nth-child(2) {
+    animation-delay: 0.1s;
+}
+
+.step:nth-child(3) {
+    animation-delay: 0.2s;
+}
+
+.step-number {
+    width: 60px;
+    height: 60px;
+    background: linear-gradient(135deg, var(--primary), var(--accent));
+    border-radius: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    font-weight: 800;
+    margin: 0 auto 20px;
+    box-shadow: 0 8px 20px rgba(108, 92, 231, 0.3);
+    transition: transform 0.3s ease;
+}
+
+.step-number:hover {
+    transform: scale(1.1) rotate(5deg);
+}
+
+.step h3 {
+    font-size: 20px;
+    margin-bottom: 10px;
+    font-weight: 700;
+}
+
+.step p {
+    color: var(--text-secondary);
+    font-size: 14px;
+}
+
+/* ============ FEATURES ============ */
+.features {
+    width: 100%;
+    max-width: 1200px;
+    padding: 100px 40px;
+    margin: 0 auto;
+}
+
+.features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 24px;
+}
+
+.feature-card {
+    background: var(--glass);
+    border: 1px solid var(--glass-border);
+    border-radius: 20px;
+    padding: 32px;
+    transition: all 0.3s ease;
+    animation: fadeInUp 0.8s ease;
+}
+
+.feature-card:nth-child(2) {
+    animation-delay: 0.1s;
+}
+
+.feature-card:nth-child(3) {
+    animation-delay: 0.2s;
+}
+
+.feature-card:nth-child(4) {
+    animation-delay: 0.3s;
+}
+
+.feature-card:nth-child(5) {
+    animation-delay: 0.4s;
+}
+
+.feature-card:nth-child(6) {
+    animation-delay: 0.5s;
+}
+
+.feature-card:hover {
+    background: rgba(255, 255, 255, 0.08);
+    border-color: rgba(108, 92, 231, 0.3);
+    transform: translateY(-8px);
+    box-shadow: 0 12px 40px rgba(108, 92, 231, 0.2);
+}
+
+.feature-icon {
+    font-size: 40px;
+    margin-bottom: 16px;
+}
+
+.feature-card h3 {
+    font-size: 20px;
+    margin-bottom: 10px;
+    font-weight: 700;
+}
+
+.feature-card p {
+    color: var(--text-secondary);
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+/* ============ STATS ============ */
+.stats {
+    width: 100%;
+    max-width: 1200px;
+    padding: 80px 40px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 40px;
+}
+
+.stat-item {
+    text-align: center;
+    animation: fadeInUp 0.8s ease;
+}
+
+.stat-item:nth-child(2) {
+    animation-delay: 0.1s;
+}
+
+.stat-item:nth-child(3) {
+    animation-delay: 0.2s;
+}
+
+.stat-item:nth-child(4) {
+    animation-delay: 0.3s;
+}
+
+.stat-number {
+    font-size: 48px;
+    font-weight: 900;
+    background: linear-gradient(135deg, var(--primary), var(--accent));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-bottom: 8px;
+}
+
+.stat-label {
+    font-size: 14px;
+    color: var(--text-secondary);
+}
+
+/* ============ TESTIMONIALS ============ */
+.testimonials {
+    width: 100%;
+    max-width: 1200px;
+    padding: 100px 40px;
+    margin: 0 auto;
+}
+
+.testimonials-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 24px;
+}
+
+.testimonial-card {
+    background: var(--glass);
+    border: 1px solid var(--glass-border);
+    border-radius: 20px;
+    padding: 32px;
+    animation: fadeInUp 0.8s ease;
+}
+
+.testimonial-card:nth-child(2) {
+    animation-delay: 0.1s;
+}
+
+.testimonial-card:nth-child(3) {
+    animation-delay: 0.2s;
+}
+
+.testimonial-stars {
+    font-size: 16px;
+    margin-bottom: 16px;
+}
+
+.testimonial-text {
+    font-size: 16px;
+    line-height: 1.6;
+    margin-bottom: 20px;
+    font-style: italic;
+    color: var(--text-secondary);
+}
+
+.testimonial-author {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.author-avatar {
+    width: 40px;
+    height: 40px;
+    background: linear-gradient(135deg, var(--primary), var(--accent));
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    font-size: 16px;
+}
+
+.author-name {
+    font-weight: 600;
+    font-size: 14px;
+}
+
+.author-role {
+    font-size: 12px;
+    color: var(--text-dim);
+}
+
+/* ============ CTA ============ */
+.cta {
+    text-align: center;
+    padding: 80px 40px;
+    margin: 0 auto;
+    max-width: 800px;
+}
+
+.cta h2 {
+    font-size: 42px;
+    font-weight: 800;
+    margin-bottom: 16px;
+    letter-spacing: -1px;
+    animation: fadeInUp 0.8s ease;
+}
+
+.cta p {
+    font-size: 18px;
+    color: var(--text-secondary);
+    margin-bottom: 32px;
+    animation: fadeInUp 0.8s ease 0.1s both;
+}
+
+.cta-btn {
+    padding: 16px 48px;
+    background: linear-gradient(135deg, var(--primary), var(--accent));
+    border: none;
+    border-radius: 16px;
+    color: white;
+    font-weight: 700;
+    font-size: 16px;
+    transition: all 0.3s ease;
+    box-shadow: 0 8px 30px rgba(108, 92, 231, 0.4);
+    animation: fadeInUp 0.8s ease 0.2s both;
+}
+
+.cta-btn:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 40px rgba(108, 92, 231, 0.6);
+}
+
+/* ============ FOOTER ============ */
+.footer {
+    text-align: center;
+    padding: 60px 40px;
+    border-top: 1px solid var(--glass-border);
+    color: var(--text-dim);
+    font-size: 13px;
+}
+
+.footer a {
+    margin: 0 16px;
+    transition: color 0.3s ease;
+}
+
+.footer a:hover {
+    color: var(--accent);
+}
+
+@media (max-width: 768px) {
+    .section-title h2 {
+        font-size: 32px;
+    }
+
+    .features-grid,
+    .testimonials-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .cta h2 {
+        font-size: 32px;
+    }
+}

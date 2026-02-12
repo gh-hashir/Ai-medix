@@ -1,0 +1,233 @@
+.pricing-page {
+    min-height: 100vh;
+    padding: 100px 40px 80px;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.pricing-header {
+    text-align: center;
+    margin-bottom: 80px;
+}
+
+.back-link {
+    display: inline-block;
+    color: var(--text-secondary);
+    font-size: 14px;
+    margin-bottom: 40px;
+    transition: color 0.3s ease;
+}
+
+.back-link:hover {
+    color: var(--accent);
+}
+
+.pricing-header h1 {
+    font-size: 56px;
+    font-weight: 900;
+    margin-bottom: 16px;
+    letter-spacing: -2px;
+    animation: fadeInUp 0.8s ease;
+}
+
+.pricing-header p {
+    font-size: 20px;
+    color: var(--text-secondary);
+    animation: fadeInUp 0.8s ease 0.1s both;
+}
+
+.pricing-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 32px;
+    margin-bottom: 100px;
+}
+
+.pricing-card {
+    background: var(--glass);
+    border: 1px solid var(--glass-border);
+    border-radius: 24px;
+    padding: 40px;
+    position: relative;
+    transition: all 0.3s ease;
+    animation: fadeInUp 0.8s ease;
+}
+
+.pricing-card:nth-child(2) {
+    animation-delay: 0.1s;
+}
+
+.pricing-card:nth-child(3) {
+    animation-delay: 0.2s;
+}
+
+.pricing-card.highlighted {
+    background: rgba(108, 92, 231, 0.1);
+    border: 2px solid var(--primary);
+    transform: scale(1.05);
+    box-shadow: 0 20px 60px rgba(108, 92, 231, 0.3);
+}
+
+.pricing-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 16px 48px rgba(0, 0, 0, 0.3);
+}
+
+.pricing-card.highlighted:hover {
+    transform: scale(1.05) translateY(-8px);
+}
+
+.popular-badge {
+    position: absolute;
+    top: -12px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: linear-gradient(135deg, var(--primary), var(--accent));
+    color: white;
+    padding: 6px 20px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+}
+
+.plan-header {
+    text-align: center;
+    margin-bottom: 32px;
+    padding-bottom: 32px;
+    border-bottom: 1px solid var(--glass-border);
+}
+
+.plan-header h3 {
+    font-size: 24px;
+    font-weight: 700;
+    margin-bottom: 16px;
+}
+
+.plan-price {
+    margin-bottom: 12px;
+}
+
+.price {
+    font-size: 56px;
+    font-weight: 900;
+    background: linear-gradient(135deg, var(--primary), var(--accent));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    letter-spacing: -2px;
+}
+
+.period {
+    font-size: 16px;
+    color: var(--text-secondary);
+    margin-left: 8px;
+}
+
+.plan-description {
+    font-size: 14px;
+    color: var(--text-secondary);
+}
+
+.features-list {
+    list-style: none;
+    margin-bottom: 32px;
+}
+
+.features-list li {
+    padding: 12px 0;
+    color: var(--text-secondary);
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-size: 15px;
+}
+
+.check-icon {
+    color: var(--accent);
+    font-weight: 700;
+    font-size: 18px;
+    flex-shrink: 0;
+}
+
+.plan-button {
+    width: 100%;
+    padding: 16px;
+    background: var(--glass);
+    border: 1px solid var(--glass-border);
+    border-radius: 12px;
+    color: var(--text-primary);
+    font-weight: 600;
+    font-size: 16px;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.plan-button:hover {
+    background: rgba(255, 255, 255, 0.1);
+    transform: translateY(-2px);
+}
+
+.plan-button.primary {
+    background: linear-gradient(135deg, var(--primary), var(--accent));
+    border: none;
+    box-shadow: 0 8px 24px rgba(108, 92, 231, 0.4);
+}
+
+.plan-button.primary:hover {
+    box-shadow: 0 12px 32px rgba(108, 92, 231, 0.6);
+}
+
+.pricing-faq {
+    margin-top: 100px;
+}
+
+.pricing-faq h2 {
+    text-align: center;
+    font-size: 42px;
+    font-weight: 800;
+    margin-bottom: 60px;
+    letter-spacing: -1px;
+}
+
+.faq-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 32px;
+}
+
+.faq-item {
+    background: var(--glass);
+    border: 1px solid var(--glass-border);
+    border-radius: 16px;
+    padding: 32px;
+}
+
+.faq-item h4 {
+    font-size: 18px;
+    margin-bottom: 12px;
+    color: var(--text-primary);
+}
+
+.faq-item p {
+    font-size: 15px;
+    color: var(--text-secondary);
+    line-height: 1.6;
+}
+
+@media (max-width: 768px) {
+    .pricing-header h1 {
+        font-size: 36px;
+    }
+
+    .pricing-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .pricing-card.highlighted {
+        transform: scale(1);
+    }
+
+    .pricing-faq h2 {
+        font-size: 32px;
+    }
+}
